@@ -44,9 +44,9 @@ func generateNumbers(c *gin.Context) {
 		return
 	}
 
+
 	numbers := generateRandomNumbers(requestBody.Amount)
 
-	
 	resultsMu.Lock()
 	defer resultsMu.Unlock()
 	results[len(results)] = sum(numbers)
@@ -58,7 +58,7 @@ func generateRandomNumbers(amount int) []int {
 	numbers := make([]int, amount)
 	rand.Seed(time.Now().UnixNano())
 	for i := 0; i < amount; i++ {
-		numbers[i] = rand.Intn(100) 
+		numbers[i] = rand.Intn(1000) 
 	}
 	return numbers
 }
